@@ -1,12 +1,9 @@
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 public class GameLoopManager : MonoBehaviour
 {
     public GameObject GameUI;
-    public void RestartGame()
-    {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
-    }
     public void MainMenu()
     {
         GameUI = GameObject.FindWithTag("GameUI");

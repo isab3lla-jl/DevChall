@@ -9,11 +9,17 @@ public class MainMenuManager : MonoBehaviour
     }
     public void Credits()
     {
-        
+        SceneController.Instance
+            .NewTransition()
+            .Load(SceneDatabase.Slots.Credits, SceneDatabase.Scenes.Credits)
+            .Unload(SceneDatabase.Slots.Menu)
+            .WithOverlay()
+            .WithClearUnusedAssets()
+            .Perform();
     }
     public void QuitGame()
     {
-        //Application.Quit();
+        Application.Quit();
     }
     public void Tutorial()
     {
