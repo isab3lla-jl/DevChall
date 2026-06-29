@@ -33,15 +33,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
-        PlayerShip.OnGameOver += () =>
-        {
-            speed = 0f;
-            speedIncreaseRate = 0f;
-            meteorRate = 0f;
-            meteorRateIncrease = 0f;
-            shieldRate = 0f;
-            lifeRate = 0f;
-        };
+        PlayerShip.OnGameOver += HandleGameOver;
     }
 
     void Update()
@@ -78,5 +70,15 @@ public class Spawner : MonoBehaviour
             var life = Instantiate(lifePrefab, pos , Quaternion.identity);
         }
 
+    }
+
+    private void HandleGameOver()
+    {
+        speed = 0f;
+        speedIncreaseRate = 0f;
+        meteorRate = 0f;
+        meteorRateIncrease = 0f;
+        shieldRate = 0f;
+        lifeRate = 0f;
     }
 }

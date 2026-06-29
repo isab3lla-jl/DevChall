@@ -9,7 +9,7 @@ public class Lives : MonoBehaviour
     [Header("Spawn Point")]
     public GameObject spawner;
 
-    public static UnityAction OnTakenLife = () => { };
+    public static event System.Action OnTakenLife;
     void Start()
     {
         spawner = GameObject.FindWithTag("Spawner");
@@ -22,23 +22,32 @@ public class Lives : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Limit")
+        if (other.gameObject.CompareTag("Limit"))
         {
             Destroy(gameObject);
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            OnTakenLife();
+            OnTakenLife?.Invoke();
             Destroy(gameObject);
         }
     }
 
     void Update()
     {
-        currentSpeed = spawner.GetComponent<Spawner>().speed;
+        if (spawner != null)
+        {
+            currentSpeed = spawner.GetComponent<Spawner>().speed;
+        }
         transform.Translate(Time.deltaTime * currentSpeed * direction);
     }
+
+    public static void ResetEvents()
+    {
+        OnTakenLife = null;
+    }
+
 }

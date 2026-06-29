@@ -14,8 +14,8 @@ public class Meteor : MonoBehaviour
     [Header("Spawn Point")]
     public GameObject spawner;
 
-    public static UnityAction OnDestroyed = () => { };
-    public static UnityAction OnHit = () => { };
+    public static event System.Action OnDestroyed;
+    public static event System.Action OnHit;
     void Start()
     {
         spawner = GameObject.FindWithTag("Spawner");
@@ -29,22 +29,22 @@ public class Meteor : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Bullet")
+        if (other.gameObject.CompareTag("Bullet"))
         {
-            OnDestroyed();
+            OnDestroyed?.Invoke();
             Destroy(gameObject);
             other.gameObject.SetActive(false);
         }
-        else if (other.gameObject.tag == "Player")
+        else if (other.gameObject.CompareTag("Player"))
         {
-            OnHit();
+            OnHit?.Invoke();
             Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Shield")
+        else if (other.gameObject.CompareTag("Shield"))
         {
             Destroy(gameObject);
         }
-        else if (other.gameObject.tag == "Limit")
+        else if (other.gameObject.CompareTag("Limit"))
         {
             Destroy(gameObject);
         }
@@ -52,7 +52,17 @@ public class Meteor : MonoBehaviour
     
     void Update()
     {
-        currentSpeed = spawner.GetComponent<Spawner>().speed;
+        if (spawner != null)
+        {
+            currentSpeed = spawner.GetComponent<Spawner>().speed;
+        }
         transform.Translate(Time.deltaTime * currentSpeed * direction);
     }
+
+    public static void ResetEvents()
+    {
+        OnDestroyed = null;
+        OnHit = null;
+    }
+
 }

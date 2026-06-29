@@ -8,17 +8,16 @@ public class Score : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Meteor.OnDestroyed += () => 
-        {
-            score++;
-            scoreText.text = $"Score: {score}";
-        };
+        Meteor.OnDestroyed += HandleMeteorDestroyed;
         //Meteor.OnDestroyed += OnDestroeyd;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleMeteorDestroyed()
     {
-        
+        score++;
+        if (scoreText != null)
+        {
+            scoreText.text = $"Score: {score}";
+        }
     }
 }

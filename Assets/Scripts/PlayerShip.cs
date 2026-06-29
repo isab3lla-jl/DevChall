@@ -32,7 +32,7 @@ public class PlayerShip : MonoBehaviour
     [Header("Game Over UI")]
     public GameObject gameOverPanel;
 
-    public static UnityAction OnGameOver = () => { };
+    public static event System.Action OnGameOver;
 
     void Start()
     {
@@ -53,7 +53,11 @@ public class PlayerShip : MonoBehaviour
             b.gameObject.SetActive(false);
         }
 
-        // - Lives text & game over logic
+        // Methods
+        Meteor.OnHit += HandleMeteorHit;
+        Lives.OnTakenLife += HandleTakenLife;
+        Shield.OnTakenShield += HandleTakenShield;
+        /* - Lives text & game over logic
         Meteor.OnHit += () => 
         {
             lives--;
@@ -80,7 +84,33 @@ public class PlayerShip : MonoBehaviour
         Shield.OnTakenShield += () =>
         {
             Instantiate(shieldPrefab, transform.position, Quaternion.identity, transform);
-        };
+        };*/
+    }
+
+
+    private void HandleMeteorHit()
+    {
+        lives--;
+        livesText.text = $"Lives: {lives}";
+        if (lives <= 0)
+        {
+            OnGameOver?.Invoke();
+            gameOverPanel.SetActive(true);
+            Debug.Log("Game Over!");
+            StopMovement();
+            canMove = false;
+        }
+    }
+
+    private void HandleTakenLife()
+    {
+        lives++;
+        livesText.text = $"Lives: {lives}";
+    }
+
+    private void HandleTakenShield()
+    {
+        Instantiate(shieldPrefab, transform.position, Quaternion.identity, transform);
     }
 
     void Update()
@@ -135,4 +165,10 @@ public class PlayerShip : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
     }
+
+    public static void ResetEvents()
+    {
+        OnGameOver = null;
+    }
+
 }
