@@ -3,6 +3,10 @@ using UnityEngine.Events;
 
 public class Lives : MonoBehaviour
 {
+    
+    [Header("Sprites")]
+    public Sprite[] livesSprites;
+    public SpriteRenderer spriteRenderer;
     [Header("Movement")]
     public Vector3 direction;
     public float currentSpeed = 2f;
@@ -16,6 +20,8 @@ public class Lives : MonoBehaviour
     }
     void OnEnable()
     {
+        
+        spriteRenderer.sprite = livesSprites[Random.Range(0, livesSprites.Length)];
         direction = Vector3.down;
         direction.x = Random.Range(-0.1f, 0.1f);
     }
