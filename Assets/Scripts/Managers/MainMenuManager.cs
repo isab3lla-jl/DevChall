@@ -23,7 +23,13 @@ public class MainMenuManager : MonoBehaviour
     }
     public void Tutorial()
     {
-        
+        SceneController.Instance
+            .NewTransition()
+            .Load(SceneDatabase.Slots.Tutorial, SceneDatabase.Scenes.Tutorial)
+            .Unload(SceneDatabase.Slots.Menu)
+            .WithOverlay()
+            .WithClearUnusedAssets()
+            .Perform();
     }
     public void PlayGame()
     {
