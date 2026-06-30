@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yo
+  m_text: 1zelf
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
   m_sharedMaterial: {fileID: -9137676471593904734, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 398387717}
   - component: {fileID: 398387716}
   m_Layer: 5
-  m_Name: SFX and other assets
+  m_Name: Other assets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SFX, Fonts & Ui Assets: '
+  m_text: 'Fonts & Ui Assets: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
   m_sharedMaterial: {fileID: -9137676471593904734, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
@@ -1015,7 +1015,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[placeholder]'
+  m_text: 'Tony Sanchez (@_tonnysmind_)
+
+    [Sammy]
+
+    (@mrfroggielover)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
   m_sharedMaterial: {fileID: -9137676471593904734, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}

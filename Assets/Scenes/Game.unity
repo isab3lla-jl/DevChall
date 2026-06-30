@@ -441,6 +441,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380778375}
   m_CullTransparentMesh: 1
+--- !u!1 &508830924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5760790485242862423, guid: 515bb1c94d533c8478cbf251d35c947c, type: 3}
+  m_PrefabInstance: {fileID: 5423705578873857575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &516839908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,6 +1863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1745534507}
+  - component: {fileID: 1745534508}
   m_Layer: 0
   m_Name: Tweening
   m_TagString: Untagged
@@ -1880,6 +1886,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745534508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745534506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd68f48f03637744eb7c181585e767ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tweening
+  player: {fileID: 508830924}
 --- !u!1 &1811479218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2238,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 37415211}
+    - target: {fileID: 2649865998966521548, guid: 515bb1c94d533c8478cbf251d35c947c, type: 3}
+      propertyPath: tweeningObjectReference
+      value: 
+      objectReference: {fileID: 1745534506}
     - target: {fileID: 5731762222378577175, guid: 515bb1c94d533c8478cbf251d35c947c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03

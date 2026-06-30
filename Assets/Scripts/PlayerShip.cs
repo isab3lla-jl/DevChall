@@ -32,6 +32,10 @@ public class PlayerShip : MonoBehaviour
     [Header("Game Over UI")]
     public GameObject gameOverPanel;
 
+    [Header("Tweening")]
+    [SerializeField] private GameObject tweeningObjectReference;
+    private Tweening tweeningScriptReference;
+
     public static event System.Action OnGameOver;
 
     void Start()
@@ -57,6 +61,8 @@ public class PlayerShip : MonoBehaviour
         Meteor.OnHit += HandleMeteorHit;
         Lives.OnTakenLife += HandleTakenLife;
         Shield.OnTakenShield += HandleTakenShield;
+        tweeningScriptReference = tweeningObjectReference.GetComponent<Tweening>();
+        
     }
 
 
@@ -64,6 +70,10 @@ public class PlayerShip : MonoBehaviour
     {
         lives--;
         livesText.text = $"Lives: {lives}";
+        if (tweeningScriptReference != null)
+        {
+            tweeningScriptReference.DamageTaken();
+        }
         if (lives <= 0)
         {
             OnGameOver?.Invoke();
@@ -76,6 +86,10 @@ public class PlayerShip : MonoBehaviour
 
     private void HandleTakenLife()
     {
+        if (tweeningScriptReference != null)
+        {
+            tweeningScriptReference.LifeTaken();
+        }
         lives++;
         livesText.text = $"Lives: {lives}";
     }

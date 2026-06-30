@@ -8,8 +8,18 @@ public class ScrollingBg : MonoBehaviour
     [SerializeField]
     private Renderer bgRenderer;
 
+    void Start()
+    {
+        PlayerShip.OnGameOver += HandleGameOver;
+    }
+
     void Update()
     {
         bgRenderer.material.mainTextureOffset += new Vector2(0, speed*Time.deltaTime);
+    }
+
+    private void HandleGameOver()
+    {
+        speed = 0f;
     }
 }
