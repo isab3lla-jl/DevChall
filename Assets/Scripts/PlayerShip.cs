@@ -57,34 +57,6 @@ public class PlayerShip : MonoBehaviour
         Meteor.OnHit += HandleMeteorHit;
         Lives.OnTakenLife += HandleTakenLife;
         Shield.OnTakenShield += HandleTakenShield;
-        /* - Lives text & game over logic
-        Meteor.OnHit += () => 
-        {
-            lives--;
-            livesText.text = $"Lives: {lives}";
-            if (lives <= 0)
-            {
-                //Debug.Log("Game Over!");
-                OnGameOver();
-                gameOverPanel.SetActive(true);
-                Debug.Log("Game Over!");
-                StopMovement();
-                canMove = false;
-            }
-        };
-
-        // + Lives text
-        Lives.OnTakenLife += () =>
-        {
-            lives++;
-            livesText.text = $"Lives: {lives}";
-        };
-        
-        // Shield instantiate
-        Shield.OnTakenShield += () =>
-        {
-            Instantiate(shieldPrefab, transform.position, Quaternion.identity, transform);
-        };*/
     }
 
 
