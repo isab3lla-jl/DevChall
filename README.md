@@ -8,7 +8,7 @@ This is our submission for the [Super Indie Games: DevsChallenge](https://www.ga
 (Wip)
 
 # Future additions
-If we continue developing we'll polish the UI, add sfx and bg music, and possibly add a save system for your highscores.
+If we further develop this project we'll polish the UI, add SFX and bg music, and possibly add a save system for your highscores.
 
 # License
 [MIT License](LICENSE.md)
