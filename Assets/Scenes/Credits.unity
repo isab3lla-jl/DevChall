@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 433847412}
   - component: {fileID: 433847411}
   m_Layer: 5
-  m_Name: UI animation
+  m_Name: Animations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'UI animations: '
+  m_text: 'Animations: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
   m_sharedMaterial: {fileID: -9137676471593904734, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
