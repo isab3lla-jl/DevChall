@@ -1017,9 +1017,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Tony Sanchez (@_tonnysmind_)
 
-    [Sammy]
-
-    (@mrfroggielover)'
+    Samantha Rivera (@mrfroggielover)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
   m_sharedMaterial: {fileID: -9137676471593904734, guid: c4b7c11f2e91b6543a9dbc8ae9b06038, type: 2}
@@ -1061,7 +1059,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 40
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
