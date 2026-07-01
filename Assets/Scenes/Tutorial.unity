@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Chatch fish to restore lives
+  m_text: 'Catch fish to restore lives
 
 '
   m_isRightToLeft: 0
